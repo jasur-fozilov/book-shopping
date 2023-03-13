@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-center">Register</h2>
+
+    <form class="mx-auto" action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <label for="email">Email:</label>
+        <input class="form-control custom-width" type="email" name="email" id="email" required>
+        <br>    
+        <label for="password">Parol:</label>
+        <input class="form-control custom-width" type="password" name="password" id="password" required>
+        <br>
+        <button class="btn btn-primary custom-width button-width" type="submit">Kirish</button>
+    </form>
+{% endblock  %}
