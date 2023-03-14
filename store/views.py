@@ -9,4 +9,6 @@ def book_list(request):
     return render(request,'store/book_list.html',{'books':books})
 
 def book_detail(request,slug):
-    return render(request,'store/book_detail.html')
+    book=Book.objects.get(slug=slug)
+
+    return render(request,'store/book_detail.html',context={'book':book})

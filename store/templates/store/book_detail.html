@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-{% endblock  %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{{ book.coverpage.url }}" alt="{{ book.title }}" class="img-fluid">
+    </div>
+    <div class="col-md-9">
+      <h2>{{ book.title }}</h2>
+      <p>Author: {{ book.writer.name }}</p>
+      <p>Category: {{ book.category }}</p>
+      <p>Price: {{ book.price }}</p>
+      <p>Description: {{ book.description }}</p>
+      {% comment %} <form action="{% url 'add_to_cart' book.slug %}" method="POST"> {% endcomment %}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
