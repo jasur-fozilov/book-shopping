@@ -4,11 +4,14 @@ from .models import Book
 
 # Create your views here.
 
-def book_list(request):
-    books=Book.objects.all()
-    return render(request,'store/book_list.html',{'books':books})
+def store(request):
+    context={}
+    return render(request,'store/store.html',context)
 
-def book_detail(request,slug):
-    book=Book.objects.get(slug=slug)
+def cart(request):
+    context={}
+    return render(request,'store/cart.html',context)
 
-    return render(request,'store/book_detail.html',context={'book':book})
+def checkout(request):
+    context={}
+    return render(request,'store/checkout.html',context)
