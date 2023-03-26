@@ -24,7 +24,7 @@ def login_user(request):
         if user:
             login(request,user)
             
-            return redirect('store:book_list')
+            return redirect('store')
         else:
             messages.error(request,'Parol yoki email noto\'g\'ri')
     return render(request,'accounts/login.html')

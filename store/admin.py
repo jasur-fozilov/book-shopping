@@ -3,7 +3,7 @@ from django.utils.text import slugify
 from PIL import Image
 # Register your models here.
 
-from .models import Category, Writer, Book, Review, Slider
+from .models import Category, Writer, Book, Review, Slider, Order, OrderItem, ShippingAddress
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields={'slug':('name',)}
@@ -39,3 +39,6 @@ admin.site.register(Writer,WriterAdmin)
 admin.site.register(Book,BookAdmin)
 admin.site.register(Review)
 admin.site.register(Slider)
+admin.site.register(Order)
+admin.site.register(OrderItem)
+admin.site.register(ShippingAddress)
