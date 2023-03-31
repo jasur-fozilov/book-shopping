@@ -25,7 +25,7 @@ function updateUserOrder(bookId,action){
         method: 'POST',
         headers:{
             'Content-Type':'application/json',
-            'X-CSRFToken':csrftoken
+            'X-CSRFToken':csrftoken,
         },
         body:JSON.stringify({'bookId':bookId,'action':action})
     })
@@ -36,5 +36,6 @@ function updateUserOrder(bookId,action){
 
     .then((data)=>{
         console.log('data',data)
+        location.reload()
     })
 }
