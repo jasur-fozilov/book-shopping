@@ -30,7 +30,7 @@ class Book(models.Model):
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     slug=models.SlugField(max_length=100,unique=True,db_index=True)
-    price=models.IntegerField()
+    price=models.DecimalField(max_digits=7,decimal_places=2)
     stock=models.IntegerField()
     digital=models.BooleanField(default=False,blank=True,null=True)
     coverpage=models.FileField(upload_to="coverpage/")
