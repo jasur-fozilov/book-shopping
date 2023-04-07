@@ -98,3 +98,16 @@
 .btn-primary{
     border-radius: 5px;
 }
+
+
+.card{
+	margin-bottom: 20px;
+	padding: 12px;
+	background-color: #eef7ff75;
+}
+
+.card-img-top{
+	width: 210px;
+	height: 249px;
+	align-self: center;
+}

@@ -59,6 +59,6 @@ function updateUserOrder(bookId,action){
 
     .then((data)=>{
         console.log('data',data)
-        // location.reload()
+        location.reload()
     })
 }

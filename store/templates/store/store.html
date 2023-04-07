@@ -3,18 +3,16 @@
 {% block content %}
     <div class="row">
         {% for book in books %}
-        <div class="col-lg-4">
-            <img class="thumbnail" src="{{book.bookURL}}"  alt="" srcset="">
-            <div class="box-element product">
-                <h6><strong>{{book.name}}</strong></h6>
-                <hr>
-
-                <button data-book={{book.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                <a class="btn btn-outline-success" href="#">View</a>
-                <h4 style="display: inline-block; float: right"><strong>${{book.price|floatformat:2}}</strong></h4>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top" src="{{book.bookURL}}" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">{{book.name}}</h4>
+                <p class="card-text">Price: ${{book.price}}</p>
+                <button data-book="{{book.id}}" data-action="add" class="add-to-cart btn btn-primary update-cart">Add to cart</button>
+              </div>
             </div>
-        </div>
+          </div>
         {% endfor %}
     </div>
 {% endblock content %}
-
